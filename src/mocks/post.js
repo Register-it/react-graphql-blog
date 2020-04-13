@@ -6,7 +6,7 @@ const post = {
   author: {
     image: "https://miro.medium.com/fit/c/96/96/1*4duhg3iAusVFxUW7ZgrysQ.png",
     id: "123456",
-    displayName: "Lorenzo Spyna",
+    displayName: "Lorenzo Spyna"
   },
   date: "2020-04-04T08:19:53.021Z",
   readingTime: 6,
@@ -95,7 +95,7 @@ When you include a task list in the first comment of an Issue, you will see a he
 
 And, of course emoji!
 
-    `,
-};
+    `
+}
 
-export default post;
+export default post

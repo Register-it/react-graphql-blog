@@ -9,6 +9,8 @@ import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp"
 import React from "react"
 import Search from "../components/Search/Search"
 import { Link } from "react-router-dom"
+import { IconButton } from "@material-ui/core"
+import GitHubImage from "./GithubIcon.svg"
 
 export default function ({ children }) {
   const classes = useStyles()
@@ -25,6 +27,23 @@ export default function ({ children }) {
             Blog
           </Typography>
           <Search />
+          <div>
+            <a
+              href="https://github.com/Register-it/react-graphql-blog"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View source code on github"
+              title="View source code on github"
+            >
+              <IconButton
+                aria-label="Source code of this blog"
+                aria-controls="menu-appbar"
+                color="inherit"
+              >
+                <img src={GitHubImage} alt="Github icon"></img>
+              </IconButton>
+            </a>
+          </div>
         </Toolbar>
       </AppBar>
       <span id="back-to-top-anchor" />
