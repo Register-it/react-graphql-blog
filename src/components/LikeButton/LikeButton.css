@@ -1,0 +1,39 @@
+#like-button-container {
+  position: fixed;
+  top: 40%;
+  margin: 30px;
+  margin-left: -100px;
+}
+
+.like-button {
+  background-color: transparent !important;
+}
+
+.like-count {
+  display: inline-block;
+  height: 40px;
+  margin-left: 8px;
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+  #like-button-container {
+    position: relative;
+    margin-left: 0;
+  }
+}
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+  */
+
+@media (min-width: 320px) and (max-width: 480px) {
+  #like-button-container {
+    position: relative;
+    margin-left: 0;
+  }
+}
