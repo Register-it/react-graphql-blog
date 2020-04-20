@@ -32,12 +32,10 @@ export default function ({ children }) {
               href="https://github.com/Register-it/react-graphql-blog"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="View source code on github"
               title="View source code on github"
             >
               <IconButton
                 aria-label="Source code of this blog"
-                aria-controls="menu-appbar"
                 color="inherit"
               >
                 <img src={GitHubImage} alt="Github icon"></img>
@@ -51,8 +49,13 @@ export default function ({ children }) {
         className={classes.container}
         classes={{ maxWidthMd: classes.maxWidthMd }}
         maxWidth="md"
+        component="main"
       >
         {children}
+        <header>
+          <h1>DEMO blog</h1>
+          <h2>Made with <span role="img" aria-label="heart">❤️</span> in JavaScript unsing React.js and GraphQL.</h2>
+        </header>
       </Container>
       <ScrollToggle>
         <ScrollTop>
