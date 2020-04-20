@@ -53,7 +53,11 @@ const useStyles = makeStyles((theme) => ({
   details: {
     display: "flex",
     flexDirection: "column",
-    maxWidth: 480
+    maxWidth: 480,
+    minWidth: 480,
+    "@media (max-width: 680px)": {
+      minWidth: '50%'
+    }
   },
   header: {
     "@media (max-width: 680px)": {
@@ -61,7 +65,9 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   content: {
-    flex: "1 0 auto"
+    flex: "1 0 auto",
+    padding:0,
+    paddingLeft: 8
   },
   cover: {
     width: 151,

@@ -8,7 +8,7 @@ import { withHtmlPageMetadata } from "../HtmlPageMetadata"
 
 export const GET_POSTS = gql`
   query getPosts {
-    getPosts {
+    posts {
       title
       subtitle
       readingTime
@@ -29,7 +29,7 @@ function Home() {
   if (error) {
     return <Error />
   }
-  return data.getPosts.map((post) => <PostPreview post={post} key={post.id} />)
+  return data.posts.map((post) => <PostPreview post={post} key={post.id} />)
 }
 
 export default withHtmlPageMetadata(

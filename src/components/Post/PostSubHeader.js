@@ -5,12 +5,13 @@ export const styles = {
   /* Styles applied to the root element. */
   root: {
     display: "flex",
-    alignItems: "center"
+    alignItems: "center",
   },
   /* Styles applied to the avatar element. */
   avatar: {
     flex: "0 0 auto",
-    marginRight: 16
+    marginRight: 16,
+    backgroundColor: `#cccccc66`
   },
   /* Styles applied to the action element. */
   action: {
@@ -34,9 +35,7 @@ function PostSubHeader(props) {
 
   return (
     <div className={classes.root}>
-      <div className={classes.avatar}>
-        <Avatar aria-label={title} src={image} alt="Author image"></Avatar>
-      </div>
+        <Avatar aria-label={title} className={classes.avatar} src={image} alt="Author image"></Avatar>
       <div className={classes.content}>
         <Typography
           variant="body2"

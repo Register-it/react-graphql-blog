@@ -15,7 +15,7 @@ import HtmlPageMetadata from "../HtmlPageMetadata"
 
 export const GET_POST_QUERY = gql`
   query getPost($postId: String!) {
-    getPost(id: $postId) {
+    post(id: $postId) {
       date
       readingTime
       title
@@ -47,7 +47,7 @@ export default function Post() {
     return <Error />
   }
 
-  const post = data.getPost
+  const {post} = data
   const { title, subtitle, author, date, readingTime, tags, likes } = post
   const { displayName, image } = author
 

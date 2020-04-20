@@ -1,7 +1,7 @@
 import ApolloClient from "apollo-boost"
 
 const apolloClient = new ApolloClient({
-  uri: `https://my-server`
+  uri: `https://register-demo-graphql-server.herokuapp.com/`
 })
 
 export default apolloClient
