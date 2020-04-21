@@ -47,7 +47,7 @@ export default function Post() {
     return <Error />
   }
 
-  const {post} = data
+  const { post } = data
   const { title, subtitle, author, date, readingTime, tags, likes } = post
   const { displayName, image } = author
 
@@ -73,7 +73,7 @@ export default function Post() {
       />
       <PostTags tags={tags} />
       <div id="like-button-container" className="fade-in">
-        <LikeButton likes={likes} />
+        <LikeButton likes={likes} postId={id} />
       </div>
       <Comments />
     </article>
