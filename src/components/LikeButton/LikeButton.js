@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import "./LikeButton.css"
 import LikeImage from "./LikeButton.svg"
 import { Fab } from "@material-ui/core"
