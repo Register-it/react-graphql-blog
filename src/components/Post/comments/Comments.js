@@ -1,9 +1,10 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { useQuery } from "@apollo/react-hooks"
 import gql from "graphql-tag"
-import { Avatar, Grid, Paper, TextField, Button } from "@material-ui/core"
+import { Avatar, Grid, Paper, Button } from "@material-ui/core"
 import dayjs from "dayjs"
-import Error from "../Error/Error"
+import Error from "../../Error/Error"
+import NewComment from "./NewComment"
 
 export const GET_COMMENTS_QUERY = gql`
   query getComments($postId: String!, $first: Int, $after: String) {
@@ -31,6 +32,12 @@ function Comments({ postId }) {
       first: 4
     }
   })
+
+  const [newcomments, setNewComments] = useState([])
+
+  function onCommentAdded(comment) {
+    setNewComments([comment, ...newcomments])
+  }
 
   function loadMoreComments() {
     fetchMore({
@@ -61,31 +68,15 @@ function Comments({ postId }) {
   return (
     <section id="comments">
       <h2>Comments</h2>
-      <NewComment />
+      <NewComment postId={postId} onCommentAdded={onCommentAdded} />
+      {newcomments.map((comment) => (
+        <Comment comment={comment} key={`comment-${comment.id}`} />
+      ))}
       {comments.map((comment) => (
         <Comment comment={comment} key={`comment-${comment.id}`} />
       ))}
       <LoadMoreComments hasMore={hasMore} loadMoreComments={loadMoreComments} />
     </section>
-  )
-}
-
-function NewComment() {
-  return (
-    <Paper className="comment-container">
-      <TextField
-        className="comment"
-        id="outlined-multiline-static"
-        label="Add a Comment"
-        multiline
-        rows="4"
-        placeholder="Your comment here"
-        variant="outlined"
-      />
-      <Button variant="contained" color="primary">
-        Publish
-      </Button>
-    </Paper>
   )
 }
 

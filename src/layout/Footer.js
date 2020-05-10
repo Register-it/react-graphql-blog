@@ -4,7 +4,7 @@ import { makeStyles } from "@material-ui/core/styles"
 import Container from "@material-ui/core/Container"
 import Typography from "@material-ui/core/Typography"
 import Link from "@material-ui/core/Link"
-import { Link as InternalLink} from "react-router-dom"
+import { Link as InternalLink } from "react-router-dom"
 
 function Copyright() {
   return (

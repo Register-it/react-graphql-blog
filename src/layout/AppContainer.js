@@ -12,6 +12,7 @@ import { Link } from "react-router-dom"
 import { IconButton } from "@material-ui/core"
 import GitHubImage from "./GithubIcon.svg"
 import Footer from "./Footer"
+import Logo from "./devs-logo-light.svg"
 
 export default function ({ children }) {
   const classes = useStyles()
@@ -25,6 +26,12 @@ export default function ({ children }) {
             component={Link}
             to="/"
           >
+            <img
+              className={classes.titleImage}
+              src={Logo}
+              alt="Github icon"
+              width={60}
+            ></img>
             Blog
           </Typography>
           <Search />
@@ -107,9 +114,14 @@ const useStyles = makeStyles((theme) => ({
     right: theme.spacing(2)
   },
   title: {
+    display: "flex",
+    alignItems: "center",
     flexGrow: 1,
     color: "inherit",
     textDecoration: "none"
+  },
+  titleImage: {
+    marginRight: theme.spacing(1)
   },
   container: {
     padding: `${theme.spacing(1)} ${theme.spacing(2)}`,

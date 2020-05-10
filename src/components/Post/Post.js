@@ -4,7 +4,7 @@ import ReactMarkdown from "react-markdown"
 import PostSubHeader from "./PostSubHeader"
 import dayjs from "dayjs"
 import LikeButton from "../LikeButton/LikeButton"
-import Comments from "./Comments"
+import Comments from "./comments/Comments"
 import PostTags from "./PostTags"
 import PostLoader from "./PostLoader"
 
