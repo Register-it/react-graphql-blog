@@ -11,6 +11,7 @@ import Search from "../components/Search/Search"
 import { Link } from "react-router-dom"
 import { IconButton } from "@material-ui/core"
 import GitHubImage from "./GithubIcon.svg"
+import Footer from "./Footer"
 
 export default function ({ children }) {
   const classes = useStyles()
@@ -34,10 +35,7 @@ export default function ({ children }) {
               rel="noopener noreferrer"
               title="View source code on github"
             >
-              <IconButton
-                aria-label="Source code of this blog"
-                color="inherit"
-              >
+              <IconButton aria-label="Source code of this blog" color="inherit">
                 <img src={GitHubImage} alt="Github icon"></img>
               </IconButton>
             </a>
@@ -52,11 +50,8 @@ export default function ({ children }) {
         component="main"
       >
         {children}
-        <header>
-          <h1>DEMO blog</h1>
-          <h2>Made with <span role="img" aria-label="heart">❤️</span> in JavaScript unsing React.js and GraphQL.</h2>
-        </header>
       </Container>
+      <Footer />
       <ScrollToggle>
         <ScrollTop>
           <Fab color="secondary" size="small" aria-label="scroll back to top">

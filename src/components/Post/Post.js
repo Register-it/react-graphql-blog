@@ -34,8 +34,10 @@ export const GET_POST_QUERY = gql`
 export default function Post() {
   let { id } = useParams()
   const { loading, error, data } = useQuery(GET_POST_QUERY, {
+    fetchPolicy: "cache-and-network",
     variables: {
-      postId: id
+      postId: id,
+      first: 4
     }
   })
 
@@ -75,7 +77,7 @@ export default function Post() {
       <div id="like-button-container" className="fade-in">
         <LikeButton likes={likes} postId={id} />
       </div>
-      <Comments />
+      <Comments postId={id} />
     </article>
   )
 }

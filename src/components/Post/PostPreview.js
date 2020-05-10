@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 480,
     minWidth: 480,
     "@media (max-width: 680px)": {
-      minWidth: '50%'
+      minWidth: "50%"
     }
   },
   header: {
@@ -66,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     flex: "1 0 auto",
-    padding:0,
+    padding: 0,
     paddingLeft: 8
   },
   cover: {

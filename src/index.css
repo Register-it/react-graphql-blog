@@ -121,3 +121,8 @@ img {
 .margin-top {
   margin-top: 20px;
 }
+
+.load-more-posts-container {
+  padding: 16px;
+  text-align: center;
+}
