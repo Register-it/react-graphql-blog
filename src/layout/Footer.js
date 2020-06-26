@@ -44,7 +44,7 @@ export default function Footer(props) {
           <span role="img" aria-label="heart">
             ❤️
           </span>{" "}
-          in JavaScript unsing React.js and GraphQL.
+          in JavaScript using React.js and GraphQL.
         </Typography>
         <Copyright />
       </Container>

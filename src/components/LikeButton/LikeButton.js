@@ -1,37 +1,92 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import "./LikeButton.css"
 import LikeImage from "./LikeButton.svg"
-import { Fab } from "@material-ui/core"
 import { useMutation } from "@apollo/react-hooks"
 import gql from "graphql-tag"
+import likeAnimation from "./LikeButtonAnimation"
 
 const ADD_LIKE = gql`
-  mutation AddTodo($postId: String!) {
+  mutation addClap($postId: String!) {
     addLike(postId: $postId)
   }
 `
-
 export default function LikeButton({ postId, likes }) {
-  const [clapCount, seClapCount] = useState(likes)
-
   const [addLike] = useMutation(ADD_LIKE)
 
-  const onClapHanlder = () => {
-    seClapCount(clapCount + 1)
-    addLike({ variables: { postId } })
-  }
+  useEffect(() => {
+    const onClapHanlder = () => {
+      addLike({ variables: { postId } })
+    }
+    likeAnimation(likes, onClapHanlder)
+  }, [likes, addLike, postId])
 
   return (
-    <>
-      <Fab
-        size="small"
-        className="like-button"
-        aria-label="Clap if you liked this article"
-        onClick={onClapHanlder}
-      >
-        <img src={LikeImage} alt="Like button" />
-      </Fab>
-      <span className="like-count">{clapCount}</span>
-    </>
+    <div className="canvas">
+      <div id="totalCounter" className="total-counter"></div>
+
+      <div id="clap" className="clap-container">
+        <img src={LikeImage} alt="like this article"></img>
+      </div>
+
+      <div id="clicker" className="click-counter">
+        <span className="counter"></span>
+      </div>
+
+      <div id="sonar-clap" className="clap-container-sonar"></div>
+
+      <div id="particles" className="particles-container">
+        <div className="triangle">
+          <div className="square"></div>
+        </div>
+        <div className="triangle">
+          <div className="square"></div>
+        </div>
+        <div className="triangle">
+          <div className="square"></div>
+        </div>
+        <div className="triangle">
+          <div className="square"></div>
+        </div>
+        <div className="triangle">
+          <div className="square"></div>
+        </div>
+      </div>
+
+      <div id="particles-2" className="particles-container">
+        <div className="triangle">
+          <div className="square"></div>
+        </div>
+        <div className="triangle">
+          <div className="square"></div>
+        </div>
+        <div className="triangle">
+          <div className="square"></div>
+        </div>
+        <div className="triangle">
+          <div className="square"></div>
+        </div>
+        <div className="triangle">
+          <div className="square"></div>
+        </div>
+      </div>
+
+      <div id="particles-3" className="particles-container">
+        <div className="triangle">
+          <div className="square"></div>
+        </div>
+        <div className="triangle">
+          <div className="square"></div>
+        </div>
+        <div className="triangle">
+          <div className="square"></div>
+        </div>
+        <div className="triangle">
+          <div className="square"></div>
+        </div>
+        <div className="triangle">
+          <div className="square"></div>
+        </div>
+      </div>
+    </div>
   )
 }
