@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import "./LikeButton.css"
 import LikeImage from "./LikeButton.svg"
 import { useMutation } from "@apollo/react-hooks"
